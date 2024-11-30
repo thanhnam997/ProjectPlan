@@ -1,0 +1,38 @@
+﻿@page
+@model CoffeeShopApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Coffee Shop Management";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/Products">Products</a></li>
+                <li><a href="/Orders">Orders</a></li>
+                <li><a href="/Employees">Employees</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome to Coffee Shop Management</h1>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>Manage your products, orders, and employees efficiently.</p>
+        </section>
+</main>
+
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Coffee Shop Management</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿@page
+@model CoffeeShopApp.Pages.Products.ProductsModel
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>Products</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="NewProduct.Name"></label>
+        <input asp-for="NewProduct.Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="NewProduct.Price"></label>
+        <input asp-for="NewProduct.Price" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
+
+<h2>Product List</h2>
+<ul>
+@foreach (var product in Model.Products)
+{
+    <li>@product.Name - $@product.Price</li>
+}
+</ul>
