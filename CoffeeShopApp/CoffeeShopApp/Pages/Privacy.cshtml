@@ -1,45 +1,43 @@
 ﻿@page
-@model CoffeeShopApp.Pages.Orders.OrdersModel
+@model CoffeeShopApp.Pages.PrivacyModel
 @{
-    ViewData["Title"] = "Orders";
+    ViewData["Title"] = "Privacy Policy";
 }
 
-<h1>Orders</h1>
+<h1>Privacy Policy</h1>
+<p>Your privacy is important to us. It is Coffee Shop Management's policy to respect your privacy regarding any information we may collect from you across our website, http://yourwebsite.com, and other sites we own and operate.</p>
 
-<form method="post">
-    <div class="form-group">
-        <label asp-for="NewOrder.CustomerName"></label>
-        <input asp-for="NewOrder.CustomerName" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label>Products</label>
-        @for (int i = 0; i < Model.Products.Count; i++)
-        {
-            <div>
-                <input type="checkbox" name="SelectedProductIds" value="@Model.Products[i].ProductId" />
-                @Model.Products[i].Name - $@Model.Products[i].Price
-                <input type="number" name="ProductQuantities" min="1" value="1" />
-            </div>
-        }
-    </div>
-    <button type="submit" class="btn btn-primary">Add Order</button>
-</form>
+<h2>Information We Collect</h2>
+<p>We only collect information about you if we have a reason to do so – for example, to provide our services, to communicate with you, or to make our services better.</p>
 
-<h2>Order List</h2>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Customer Name</th>
-            <th>Order Date</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var order in Model.Orders)
-    {
-        <tr>
-            <td>@order.CustomerName</td>
-            <td>@order.OrderDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
-        </tr>
-    }
-    </tbody>
-</table>
+<h3>Website Visitors</h3>
+<p>Like most website operators, Coffee Shop Management collects non-personally-identifying information of the sort that web browsers and servers typically make available, such as the browser type, language preference, referring site, and the date and time of each visitor request. Our purpose in collecting non-personally identifying information is to better understand how our visitors use our website.</p>
+
+<h3>Personal Data</h3>
+<p>Certain visitors to Coffee Shop Management's websites choose to interact with Coffee Shop Management in ways that require Coffee Shop Management to gather personally-identifying information. The amount and type of information that Coffee Shop Management gathers depends on the nature of the interaction.</p>
+
+<h2>How We Use Information</h2>
+<p>We use the information we collect in the following ways:</p>
+<ul>
+    <li>To provide and maintain our service</li>
+    <li>To notify you about changes to our service</li>
+    <li>To allow you to participate in interactive features of our service when you choose to do so</li>
+    <li>To provide customer support</li>
+    <li>To gather analysis or valuable information so that we can improve our service</li>
+    <li>To monitor the usage of our service</li>
+    <li>To detect, prevent and address technical issues</li>
+</ul>
+
+<h2>Security of Data</h2>
+<p>The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+
+<h2>Changes to This Privacy Policy</h2>
+<p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+<p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+<h2>Contact Us</h2>
+<p>If you have any questions about this Privacy Policy, please contact us:</p>
+<ul>
+    <li>By email: Thanhnam97ib@gmail.com</li>
+    <li>By phone number: (612)-401-3601</li>
+</ul>
