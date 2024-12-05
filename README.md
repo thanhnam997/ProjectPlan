@@ -4,20 +4,7 @@ Welcome to the Coffee Shop Management Application! This application helps you ma
 
 Table of Contents
 Overview
-
 Features
-
-Setup Instructions
-
-Usage
-
-Troubleshooting
-
-Contributing
-
-License
-
-Contact
 
 Overview
 The Coffee Shop Management Application is designed to streamline the management of your coffee shop. It allows you to keep track of products, process orders, and manage employee schedules all in one place.
