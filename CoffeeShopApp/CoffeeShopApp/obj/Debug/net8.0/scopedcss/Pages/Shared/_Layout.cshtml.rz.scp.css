@@ -46,3 +46,6 @@ button.accept-policy[b-pttdbls5iw] {
   white-space: nowrap;
   line-height: 60px;
 }
+body[b-pttdbls5iw] {
+  font-family: 'Roboto', sans-serif;
+}

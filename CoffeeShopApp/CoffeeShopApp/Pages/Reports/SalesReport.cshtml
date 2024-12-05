@@ -1,0 +1,28 @@
+﻿@page
+@model CoffeeShopApp.Pages.Reports.SalesReportModel
+@{
+    ViewData["Title"] = "Sales Report";
+}
+
+<h2>Sales Report</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Order Date</th>
+            <th>Product Name</th>
+            <th>Total Quantity</th>
+            <th>Total Sales</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var report in Model.SalesReports)
+    {
+        <tr>
+            <td>@report.OrderDate</td>
+            <td>@report.ProductName</td>
+            <td>@report.TotalQuantity</td>
+            <td>@report.TotalSales.ToString("C")</td>
+        </tr>
+    }
+    </tbody>
+</table>

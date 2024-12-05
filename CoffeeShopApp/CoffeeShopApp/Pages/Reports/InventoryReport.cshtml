@@ -1,0 +1,24 @@
+﻿@page
+@model CoffeeShopApp.Pages.Reports.InventoryReportModel
+@{
+    ViewData["Title"] = "Inventory Report";
+}
+
+<h2>Inventory Report</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Total Sold</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var report in Model.InventoryReports)
+    {
+        <tr>
+            <td>@report.ProductName</td>
+            <td>@report.TotalSold</td>
+        </tr>
+    }
+    </tbody>
+</table>

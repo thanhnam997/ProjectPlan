@@ -4,35 +4,40 @@
     ViewData["Title"] = "Coffee Shop Management";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/Products">Products</a></li>
-                <li><a href="/Orders">Orders</a></li>
-                <li><a href="/Employees">Employees</a></li>
-            </ul>
-        </nav>
-    </header>
+<h1>Welcome to Coffee Shop Management</h1>
 
-    <main>
-        <h1>Welcome to Coffee Shop Management</h1>
-        <section id="overview">
-            <h2>Overview</h2>
-            <p>Manage your products, orders, and employees efficiently.</p>
-        </section>
-</main>
+<!-- Add canvas element for the chart -->
+<canvas id="orderChart" width="400" height="200"></canvas>
 
-    <footer>
-        <p>&copy; @DateTime.Now.Year - Coffee Shop Management</p>
-    </footer>
-</body>
-</html>
+@section Scripts {
+    <script>
+        // Ensure the DOM is fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var ctx = document.getElementById('orderChart').getContext('2d');
+            var orderDates = @Html.Raw(Json.Serialize(Model.OrderStatistics.Select(os => os.OrderDate).ToList()));
+            var orderCounts = @Html.Raw(Json.Serialize(Model.OrderStatistics.Select(os => os.OrderCount).ToList()));
+            
+            // Create a new chart using Chart.js
+            var orderChart = new Chart(ctx, {
+                type: 'bar', // Specify the chart type
+                data: {
+                    labels: orderDates, // Labels for the x-axis
+                    datasets: [{
+                        label: 'Order Count',
+                        data: orderCounts, // Data for the chart
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)', // Background color for the bars
+                        borderColor: 'rgba(75, 192, 192, 1)', // Border color for the bars
+                        borderWidth: 1 // Border width for the bars
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true // Start the y-axis at zero
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+}
